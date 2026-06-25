@@ -1,0 +1,5 @@
+# Disable ALL Git end-of-line normalization
+* -text
+
+# Treat every file as binary unless explicitly overridden
+* binary
