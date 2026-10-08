@@ -33,11 +33,19 @@ jobs:
         uses: actions/checkout@v7
       - name: Setup Pages
         uses: actions/configure-pages@v6
+        
+      - name: Extract zip
+        run: |
+          rm -rf wwwroot
+          mkdir -p wwwroot
+          unzip -q wwwroot.zip -d wwwroot
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
         with:
-          # Upload entire repository
-          path: '.'
+          # Upload the unpacked zip contents.
+          path: 'wwwroot'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5.0.1
