@@ -39,15 +39,15 @@ jobs:
         
       - name: Extract zip
         run: |
-          rm -rf wwwroot
-          mkdir -p wwwroot
-          unzip -q wwwroot.zip -d wwwroot
+          rm -rf MarymoorStudios.Games.Demo.WebAssembly
+          mkdir -p MarymoorStudios.Games.Demo.WebAssembly
+          unzip -q wwwroot.zip -d MarymoorStudios.Games.Demo.WebAssembly
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
         with:
           # Upload the unpacked zip contents.
-          path: 'wwwroot'
+          path: 'MarymoorStudios.Games.Demo.WebAssembly'
 
       - name: Deploy to GitHub Pages
         id: deployment
